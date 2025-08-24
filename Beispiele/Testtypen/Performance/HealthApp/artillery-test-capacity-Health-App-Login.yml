@@ -1,0 +1,20 @@
+config:
+  target: "https://myhealthapp-test.netlify.app/"
+  phases:
+    - duration: 30
+      arrivalRate: 50
+    - duration: 30
+      arrivalRate: 100
+    - duration: 30
+      arrivalRate: 150
+  defaults:
+    headers:
+      Content-Type: "application/json"
+scenarios:
+   - flow:
+       - post:
+          url: "/login"
+          json:
+            username: "admin"
+            password: "admin123"
+

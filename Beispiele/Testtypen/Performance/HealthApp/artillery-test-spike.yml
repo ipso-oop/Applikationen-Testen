@@ -1,0 +1,13 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 5        # Warm-up
+    - duration: 5
+      arrivalRate: 100      # Plötzlicher Spike!
+    - duration: 20
+      arrivalRate: 5        # Rückkehr zur Normalität
+scenarios:
+  - flow:
+      - get:
+          url: "/api/slow"

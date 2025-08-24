@@ -1,0 +1,9 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 30      # 30 Sekunden Testlauf
+      arrivalRate: 10   # 10 neue Benutzer pro Sekunde
+scenarios:
+  - flow:
+      - get:
+          url: "/api/slow"

@@ -1,0 +1,23 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 30
+      arrivalRate: 50
+    - duration: 30
+      arrivalRate: 100
+    - duration: 30
+      arrivalRate: 200
+    - duration: 30
+      arrivalRate: 400
+    - duration: 30
+      arrivalRate: 800
+    - duration: 30
+      arrivalRate: 1000
+  defaults:
+    headers:
+      Content-Type: "application/json"
+scenarios:
+  - flow:
+      - get:
+          url: "/api/slow"
+

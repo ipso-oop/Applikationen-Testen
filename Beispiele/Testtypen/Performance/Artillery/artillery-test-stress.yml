@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 30
+      arrivalRate: 20       # Start: 10 Benutzer/sec
+    - duration: 30
+      arrivalRate: 40       # Jetzt: 20 Benutzer/sec
+    - duration: 30
+      arrivalRate: 80       # Jetzt: 40 Benutzer/sec
+    - duration: 30
+      arrivalRate: 400       # Hochlast!
+scenarios:
+  - flow:
+      - get:
+          url: "/api/slow"
