@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User-Daten = Snapshot 1`] = `
+{
+  "age": 31,
+  "name": "Alice",
+}
+`;
+
+exports[`User-Daten entsprechen Snapshot 1`] = `
+{
+  "age": 30,
+  "name": "Alice",
+}
+`;
