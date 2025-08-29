@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 2rem;
+}
+
+main {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label, select, input {
+  margin: 0.5rem 0;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #0078d4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}

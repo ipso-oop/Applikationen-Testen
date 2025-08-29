@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CityPass – Ticketkauf</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main>
+    <h1>Ticketautomat – Ticket kaufen (Variante A)</h1>
+    <form action="/buy" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required />
+
+      <label for="ticketId">Ticket wählen:</label>
+      <select name="ticketId" required>
+        <% tickets.forEach(ticket => { %>
+          <option value="<%= ticket.id %>">
+            <%= ticket.name %> – <%= ticket.price.toFixed(2) %> €
+          </option>
+        <% }); %>
+      </select>
+
+      <button type="submit">Jetzt kaufen</button>
+    </form>
+
+    <% if (message) { %>
+      <p class="message"><%= message %></p>
+    <% } %>
+  </main>
+</body>
+</html>

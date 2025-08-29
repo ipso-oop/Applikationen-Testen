@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>CityPass B</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #00a86b;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ticketautomat – Ticket kaufen (Variante B)</h1>
+    <form action="/buy" method="POST">
+      <input type="hidden" name="variant" value="B" />
+
+      <label for="ticketId">Ticket wählen:</label>
+      <select name="ticketId" required>
+        <% tickets.forEach(ticket => { %>
+          <option value="<%= ticket.id %>"><%= ticket.name %> – <%= ticket.price.toFixed(2) %> €</option>
+        <% }); %>
+      </select>
+
+      <label for="name">Ihr Name:</label>
+      <input type="text" name="name" required />
+
+      <button type="submit">Ticket sichern</button>
+    </form>
+
+    <% if (message) { %>
+      <p class="message"><%= message %></p>
+    <% } %>
+  </main>
+</body>
+</html>
