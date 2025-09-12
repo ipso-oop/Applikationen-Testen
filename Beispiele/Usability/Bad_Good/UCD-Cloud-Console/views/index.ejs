@@ -1,0 +1,35 @@
+<h1>Virtuelle Maschinen</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Aktionen</th>
+  </tr>
+  <% vms.forEach(vm => { %>
+    <tr>
+      <td><%= vm._id %></td>
+      <td><%= vm.name %></td>
+      <td><%= vm.status %></td>
+      <td>
+       <td>
+		  <form method="POST" action="/action">
+			<input type="hidden" name="id" value="<%= vm._id %>">
+			<button type="submit" name="op" value="start">Start</button>
+		  </form>
+
+		  <form method="POST" action="/action">
+			<input type="hidden" name="id" value="<%= vm._id %>">
+			<button type="submit" name="op" value="stop">Stop</button>
+		  </form>
+
+		  <form method="POST" action="/action">
+			<input type="hidden" name="id" value="<%= vm._id %>">
+			<button type="submit" name="op" value="delete">Delete</button>
+		  </form>
+		</td>
+      </td>
+    </tr>
+  <% }) %>
+</table>

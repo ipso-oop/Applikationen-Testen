@@ -1,0 +1,30 @@
+<div class="container py-4">
+  <h1 class="mb-4">💻 Meine virtuellen Maschinen</h1>
+
+  <% if (success) { %>
+    <div class="alert alert-success"><%= success %></div>
+  <% } %>
+
+  <div class="row">
+    <% vms.forEach(vm => { %>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= vm.name %></h5>
+            <p>Status: 
+              <span class="badge <%= vm.status === 'running' ? 'bg-success' : 'bg-secondary' %>">
+                <%= vm.status %>
+              </span>
+            </p>
+            <form method="POST" action="/action" class="d-grid gap-2">
+              <input type="hidden" name="id" value="<%= vm._id %>">
+              <button type="submit" name="op" value="start" class="btn btn-outline-success" <% if(vm.status === 'running') { %> disabled <% } %>>▶️ Starten</button>
+              <button type="submit" name="op" value="stop" class="btn btn-outline-warning" <% if(vm.status === 'stopped') { %> disabled <% } %>>⏸️ Stoppen</button>
+              <button type="submit" name="op" value="delete" class="btn btn-outline-danger" onclick="return confirm('Sicher löschen?')">🗑️ Löschen</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
