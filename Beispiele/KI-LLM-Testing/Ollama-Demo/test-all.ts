@@ -109,7 +109,7 @@ async function runAllTests() {
   
   if (failed === 0) {
     console.log(chalk.green.bold('\n🎉 All tests passed successfully!'));
-    console.log(chalk.blue('Your Ollama Llama3.2 evaluation suite is working perfectly.'));
+    console.log(chalk.blue('Your Ollama evaluation suite is working perfectly.'));
   } else {
     console.log(chalk.yellow.bold(`\n⚠️  ${failed} test(s) failed. Please check the errors above.`));
   }
