@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import ora from 'ora';
 
 async function runAllTests() {
-  console.log(chalk.blue.bold('\n🚀 Running All Ollama Llama3.2 Evaluation Tests\n'));
+  console.log(chalk.blue.bold('\n🚀 Running All Ollama Evaluation Tests\n'));
   
   const tests = [
     {

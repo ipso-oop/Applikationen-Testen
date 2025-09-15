@@ -8,7 +8,7 @@ import { table } from 'table';
 import { Langfuse } from 'langfuse';
 
 const OLLAMA_BASE_URL = 'http://localhost:11434';
-const LLAMA_MODEL = 'llama3.2:latest';
+const LLAMA_MODEL = process.env.MODELL;
 
 const langfuse = new Langfuse({
   secretKey: process.env.LANGFUSE_SECRET_KEY || '',
@@ -323,7 +323,8 @@ function analyzeCodeResponse(response: string, testCase: CodingTestCase): {
 }
 
 async function runCodingTest(): Promise<CodingResult[]> {
-  console.log(chalk.blue.bold('\n💻 Starting Ollama Llama3.2 Coding Tests\n'));
+  console.log(chalk.blue.bold('\n💻 Starting Ollama Coding Tests\n'));
+    console.log(`Modell: ${LLAMA_MODEL}`);
   
   const results: CodingResult[] = [];
   const spinner = ora('Initializing coding testing...').start();

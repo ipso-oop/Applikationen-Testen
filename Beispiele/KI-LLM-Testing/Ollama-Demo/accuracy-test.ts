@@ -8,7 +8,7 @@ import { table } from 'table';
 import { Langfuse } from 'langfuse';
 
 const OLLAMA_BASE_URL = 'http://localhost:11434';
-const LLAMA_MODEL = 'llama3.2:latest';
+const LLAMA_MODEL = process.env.MODELL;
 
 const langfuse = new Langfuse({
   secretKey: process.env.LANGFUSE_SECRET_KEY || '',

@@ -1,5 +1,5 @@
 {
-  "name": "ollama-mistral-evaluation",
+  "name": "ollama-demo",
   "version": "1.0.0",
   "description": "Comprehensive evaluation system for Ollama Mistral model with Langfuse tracing",
   "main": "index.ts",

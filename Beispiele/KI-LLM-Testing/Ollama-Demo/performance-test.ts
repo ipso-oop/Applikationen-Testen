@@ -8,7 +8,7 @@ import { table } from 'table';
 import { Langfuse } from 'langfuse';
 
 const OLLAMA_BASE_URL = 'http://localhost:11434';
-const LLAMA_MODEL = 'llama3.2:latest';
+const LLAMA_MODEL = process.env.MODELL;
 
 const langfuse = new Langfuse({
   secretKey: process.env.LANGFUSE_SECRET_KEY || '',
@@ -246,7 +246,8 @@ async function main() {
         output: "Performance testing completed",
       });
       
-      console.log(chalk.blue.bold('\n🚀 Starting Ollama Llama3.2 Performance Tests\n'));
+      console.log(chalk.blue.bold('\n🚀 Starting Ollama Performance Tests\n'));
+	  console.log(` Modell: ${LLAMA_MODEL}`);
       
       // Check if Ollama is running
       const spinner = ora('Checking Ollama connection...').start();

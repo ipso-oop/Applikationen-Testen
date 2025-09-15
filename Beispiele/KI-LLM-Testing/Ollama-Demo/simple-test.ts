@@ -3,7 +3,7 @@ import axios from 'axios';
 import chalk from 'chalk';
 
 const OLLAMA_BASE_URL = 'http://localhost:11434';
-const LLAMA_MODEL = 'llama3.2:latest';
+const LLAMA_MODEL = process.env.MODELL;
 
 async function testOllama() {
   console.log(chalk.blue.bold('\n🧪 Simple Ollama Test\n'));
