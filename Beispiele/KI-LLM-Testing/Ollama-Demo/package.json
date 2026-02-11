@@ -25,7 +25,7 @@
     "@langfuse/tracing": "^4.0.1",
     "@opentelemetry/api": "^1.9.0",
     "@opentelemetry/sdk-node": "^0.205.0",
-    "axios": "^1.6.0",
+    "axios": "^1.13.5",
     "chalk": "^4.1.2",
     "dotenv": "^17.2.2",
     "langfuse": "^2.8.0",
