@@ -19,7 +19,7 @@ async function getDb() {
 app.get('/', async (req, res) => {
   const db = await getDb();
   const vms = await db.collection('vms').find().toArray();
-  res.render('index', { vms, success: null });
+  res.render('index_optimized', { vms, success: null });
 });
 
 app.post('/action', async (req, res) => {

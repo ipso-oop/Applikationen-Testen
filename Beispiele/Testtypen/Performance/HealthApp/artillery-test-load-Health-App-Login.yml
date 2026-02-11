@@ -1,12 +1,13 @@
 config:
   target: "https://myhealthapp-test.netlify.app/"
   phases:
-    - duration: 60          # 1 Minute
+    - duration: 60          # 60s
       arrivalRate: 10       # 10 Benutzer pro Sekunde
 scenarios:
   - flow:
        - post:
           url: "/login"
-          json:
+          formData:
             username: "admin"
             password: "admin123"
+            
